@@ -12,7 +12,12 @@ export class TodoItemComponent {
   @Input() id: number = -1;
   @Input() text = '';
   @Input() isCompleted = false;
-  @Output() deleteTodo= new EventEmitter();
+  @Output() deleteTodo= new EventEmitter<number>();
+  @Output() editTodo= new EventEmitter<number>();
+
+  handleTextDoubleClicked(todoId: number) {
+    this.editTodo.emit(todoId)
+  }
 
   handleRemoveButtonClicked(todoId: number) {
     this.deleteTodo.emit(todoId);

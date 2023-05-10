@@ -1,5 +1,5 @@
 <div class="todo-item">
   <input type="checkbox">
-  <p class="text">{{text}}</p>
+  <p class="text" (dblclick)="handleTextDoubleClicked(id)">{{text}}</p>
   <div class="remove-button" (click)="handleRemoveButtonClicked(id)">x</div>
 </div>

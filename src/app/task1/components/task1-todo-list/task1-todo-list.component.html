@@ -1,0 +1,1 @@
+<hd-todo-list *ngIf="todos$ | async as todos" [todos]="todos" (deleteTodo)="handleDeleteTodo($event)"></hd-todo-list>

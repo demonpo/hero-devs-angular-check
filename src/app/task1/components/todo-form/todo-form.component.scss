@@ -1,0 +1,17 @@
+.errors-container {
+  color: red;
+  font-size: 12px;
+}
+
+.submit-button {
+  cursor: pointer;
+  color: white;
+  background: blueviolet;
+  border-radius: 4px;
+  border:none;
+  padding: 5px 10px;
+
+  &:hover {
+    background: #4b187b;
+  }
+}

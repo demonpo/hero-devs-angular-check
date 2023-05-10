@@ -3,8 +3,19 @@
   flex-direction: row;
   align-items: center;
   gap: 16px;
-}
+  width: 300px;
+  padding: 10px 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
 
-.remove-button {
-  cursor: pointer;
+  .text {
+    margin: 0;
+    width: 100%;
+  }
+
+  .remove-button {
+    justify-self: end;
+    cursor: pointer;
+    color: dimgray;
+  }
 }

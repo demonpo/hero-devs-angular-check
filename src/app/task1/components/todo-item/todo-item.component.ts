@@ -15,7 +15,6 @@ export class TodoItemComponent {
   @Output() deleteTodo= new EventEmitter();
 
   handleRemoveButtonClicked(todoId: number) {
-    console.log('handleRemoveButtonClicked', todoId);
     this.deleteTodo.emit(todoId);
   }
 }

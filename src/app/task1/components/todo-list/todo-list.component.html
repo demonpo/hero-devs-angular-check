@@ -1,0 +1,3 @@
+<div class="todo-list">
+  <hd-todo-item *ngFor="let todo of todos$ | async" [id]="todo.id" [text]="todo.text" [isCompleted]="todo.completed" (deleteTodo)="handleDeleteTodo($event)"></hd-todo-item>
+</div>

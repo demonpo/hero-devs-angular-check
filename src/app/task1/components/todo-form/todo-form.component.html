@@ -1,0 +1,5 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+  <label for="task">Task: </label>
+  <input id="task" type="text" formControlName="todo">
+  <button type="submit">Add task</button>
+</form>

@@ -16,7 +16,7 @@ export class TodoItemComponent {
   @Output() editTodo= new EventEmitter<number>();
 
   handleTextDoubleClicked(todoId: number) {
-    this.editTodo.emit(todoId)
+    this.editTodo.emit(todoId);
   }
 
   handleRemoveButtonClicked(todoId: number) {

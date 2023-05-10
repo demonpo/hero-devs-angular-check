@@ -1,0 +1,12 @@
+<ng-container #vc></ng-container>
+<button (click)="showDialog()">Open Dialog</button>
+<button (click)="closeDialog()">Close Dialog</button>
+<ng-template #modal_1>
+  <div class="modal">
+    <div class="modal-body">
+      <ng-content></ng-content>
+      <button (click)="closeDialog()">Close Dialog</button>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</ng-template>

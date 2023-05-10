@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {TodoListComponent} from "../../../components/todo-list/todo-list.component";
+import {Observable} from "rxjs";
+import {DataService, Todo} from "../../../data.service";
+import {EditTodoScreenComponent} from "../edit-todo-screen/edit-todo-screen.component";
+
+@Component({
+  selector: 'hd-task2-todo-list',
+  standalone: true,
+  imports: [CommonModule, TodoListComponent, EditTodoScreenComponent],
+  templateUrl: './task2-todo-list.component.html',
+  styleUrls: ['./task2-todo-list.component.scss']
+})
+export class Task2TodoListComponent {
+  todos$: Observable<Todo[]>;
+  constructor(
+    private dataService: DataService
+  ) {
+    this.todos$ = dataService.getData();
+  }
+
+  handleDeleteTodo(todoId: number) {
+    this.dataService.remove(todoId);
+  }
+
+  handleEditTodo(todoId: number) {
+    console.log("handleEditTodo", todoId);
+  }
+}

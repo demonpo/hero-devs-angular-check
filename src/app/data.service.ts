@@ -38,6 +38,14 @@ export class DataService {
     return of(newTodo);
   }
 
+  public update(todo: Todo): Observable<Todo> {
+    const updatedTodo = this.#data.value.find(value => value.id === todo.id);
+    if (!updatedTodo) return of();
+    updatedTodo.text = todo.text;
+    updatedTodo.completed = todo.completed;
+    return of();
+  }
+
   public remove(id: number): Observable<void> {
     this.#data.next(this.#data.value.filter((t) => t.id !== id));
     return of();

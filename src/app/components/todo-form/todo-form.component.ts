@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Todo} from "../../data.service";
@@ -11,9 +11,16 @@ import {Todo} from "../../data.service";
   styleUrls: ['./todo-form.component.scss']
 })
 export class TodoFormComponent {
+  private _initTodo?: Todo;
+  @Input()
+  set initTodo(todo: Todo) {
+    this._initTodo = todo;
+    this.todo?.setValue(todo.text);
+  }
+
   @Output() todoSaved= new EventEmitter<Partial<Todo>>();
   todoForm = new FormGroup({
-    todo: new FormControl('',[
+    todo: new FormControl(this._initTodo?.text?? '',[
       Validators.required,
       Validators.minLength(3),
     ]),
@@ -22,7 +29,8 @@ export class TodoFormComponent {
   onSubmit() {
     this.todoForm.get('todo')?.markAsTouched();
     if (this.todoForm.invalid && (this.todoForm.dirty || this.todoForm.touched)) return;
-    this.todoSaved.emit({text: this.todo?.value ?? undefined, completed: false});
+    this.todoSaved.emit({id: this._initTodo?.id, text: this.todo?.value ?? undefined, completed: false});
+    this.todoForm.reset();
   }
 
   get todo() { return this.todoForm.get('todo'); }

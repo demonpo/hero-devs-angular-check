@@ -1,2 +1,2 @@
 <hd-todo-list *ngIf="todos$ | async as todos" [todos]="todos" (deleteTodo)="handleDeleteTodo($event)" (editTodo)="handleEditTodo($event)"></hd-todo-list>
-<hd-edit-todo-screen></hd-edit-todo-screen>
+<hd-edit-todo-screen (todoSaved)="handleTodoSaved($event)"></hd-edit-todo-screen>

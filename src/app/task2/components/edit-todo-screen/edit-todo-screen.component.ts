@@ -1,7 +1,7 @@
-import {Component, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, EventEmitter, Output, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {TodoFormComponent} from "../../../components/todo-form/todo-form.component";
-import {Todo} from "../../../data.service";
+import {DataService, Todo} from "../../../data.service";
 import {ModalHolderComponent} from "../../../components/modal-holder/modal-holder.component";
 
 @Component({
@@ -14,7 +14,16 @@ import {ModalHolderComponent} from "../../../components/modal-holder/modal-holde
 export class EditTodoScreenComponent {
   @ViewChild(ModalHolderComponent) modalHolderComponent!:ModalHolderComponent;
   @ViewChild(TodoFormComponent) todoFormComponent!:TodoFormComponent;
+  @Output() todoSaved =  new EventEmitter<Todo>();
+
   handleTodoSaved(todo: Partial<Todo>) {
+    if(!todo.id || !todo.text || todo.completed === undefined) throw new Error("Empty todo saved");
+    this.todoSaved.emit({
+      id: todo.id,
+      text: todo.text,
+      completed: todo.completed
+    });
+    this.closeDialog();
   }
 
   closeDialog() {
@@ -23,5 +32,10 @@ export class EditTodoScreenComponent {
 
   showDialog() {
     this.modalHolderComponent.showDialog();
+  }
+
+  editTodo(todo: Todo) {
+    this.todoFormComponent.initTodo = {...todo};
+    this.showDialog();
   }
 }

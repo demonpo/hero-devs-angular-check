@@ -22,14 +22,15 @@ export class Task2TodoListComponent {
     this.todos$ = dataService.getData();
   }
 
+  handleTodoSaved(todo: Todo) {
+    this.dataService.update(todo);
+  }
+
   handleDeleteTodo(todo: Todo) {
     this.dataService.remove(todo.id);
   }
 
   handleEditTodo(todo: Todo) {
-    console.log(this.editTodoScreenComponent);
-    this.editTodoScreenComponent.todoFormComponent.todo?.setValue(todo.text);
-    this.editTodoScreenComponent.showDialog();
-    console.log("handleEditTodo", todo);
+    this.editTodoScreenComponent.editTodo(todo);
   }
 }

@@ -19,7 +19,7 @@ export class Task1TodoListComponent {
     this.todos$ = dataService.getData();
   }
 
-  handleDeleteTodo(todoId: number) {
-    this.dataService.remove(todoId);
+  handleDeleteTodo(todo: Todo) {
+    this.dataService.remove(todo.id);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {TodoListComponent} from "../../../components/todo-list/todo-list.component";
 import {Observable} from "rxjs";
@@ -13,6 +13,8 @@ import {EditTodoScreenComponent} from "../edit-todo-screen/edit-todo-screen.comp
   styleUrls: ['./task2-todo-list.component.scss']
 })
 export class Task2TodoListComponent {
+  @ViewChild(EditTodoScreenComponent) editTodoScreenComponent!:EditTodoScreenComponent;
+
   todos$: Observable<Todo[]>;
   constructor(
     private dataService: DataService
@@ -20,11 +22,14 @@ export class Task2TodoListComponent {
     this.todos$ = dataService.getData();
   }
 
-  handleDeleteTodo(todoId: number) {
-    this.dataService.remove(todoId);
+  handleDeleteTodo(todo: Todo) {
+    this.dataService.remove(todo.id);
   }
 
-  handleEditTodo(todoId: number) {
-    console.log("handleEditTodo", todoId);
+  handleEditTodo(todo: Todo) {
+    console.log(this.editTodoScreenComponent);
+    this.editTodoScreenComponent.todoFormComponent.todo?.setValue(todo.text);
+    this.editTodoScreenComponent.showDialog();
+    console.log("handleEditTodo", todo);
   }
 }

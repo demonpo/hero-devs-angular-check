@@ -13,14 +13,14 @@ import {Observable} from "rxjs";
 })
 export class TodoListComponent {
   @Input() todos: Todo[] = [];
-  @Output() deleteTodo= new EventEmitter<number>();
-  @Output() editTodo= new EventEmitter<number>();
+  @Output() deleteTodo= new EventEmitter<Todo>();
+  @Output() editTodo= new EventEmitter<Todo>();
 
-  handleDeleteTodo(todoId: number) {
-    this.deleteTodo.emit(todoId)
+  handleDeleteTodo(todo: Todo) {
+    this.deleteTodo.emit(todo)
   }
 
-  handleEditTodo(todoId: number) {
-    this.editTodo.emit(todoId);
+  handleEditTodo(todo: Todo) {
+    this.editTodo.emit(todo);
   }
 }

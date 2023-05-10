@@ -3,7 +3,7 @@
     <div>
       <label for="task">Task: </label>
       <input id="task" type="text" formControlName="todo">
-      <button type="submit" class="submit-button">Add task</button>
+      <button type="submit" class="submit-button">Save task</button>
     </div>
     <div *ngIf="todo?.invalid && (todo?.dirty || todo?.touched)" class="errors-container">
       <div *ngIf="todo?.errors?.['required']">

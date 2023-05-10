@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {Todo} from "../../data.service";
 
 @Component({
   selector: 'hd-todo-item',
@@ -9,17 +10,19 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent {
-  @Input() id: number = -1;
-  @Input() text = '';
-  @Input() isCompleted = false;
-  @Output() deleteTodo= new EventEmitter<number>();
-  @Output() editTodo= new EventEmitter<number>();
+  @Input() todo: Todo = {
+    id: -1,
+    text: "",
+    completed: false,
+  };
+  @Output() deleteTodo= new EventEmitter<Todo>();
+  @Output() editTodo= new EventEmitter<Todo>();
 
-  handleTextDoubleClicked(todoId: number) {
-    this.editTodo.emit(todoId);
+  handleTextDoubleClicked(todo: Todo) {
+    this.editTodo.emit(todo);
   }
 
-  handleRemoveButtonClicked(todoId: number) {
-    this.deleteTodo.emit(todoId);
+  handleRemoveButtonClicked(todo: Todo) {
+    this.deleteTodo.emit(todo);
   }
 }

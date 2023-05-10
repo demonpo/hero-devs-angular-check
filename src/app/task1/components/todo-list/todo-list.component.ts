@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {DataService, Todo} from "../../../data.service";
-import {TodoItemComponent} from "../todo-item/todo-item.component";
+import {TodoItemComponent} from "../../../components/todo-item/todo-item.component";
 import {Observable} from "rxjs";
 
 @Component({

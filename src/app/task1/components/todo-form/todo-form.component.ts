@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {DataService} from "../../../data.service";
 
 @Component({
@@ -12,7 +12,10 @@ import {DataService} from "../../../data.service";
 })
 export class TodoFormComponent {
   todoForm = new FormGroup({
-    todo: new FormControl(''),
+    todo: new FormControl('',[
+      Validators.required,
+      Validators.minLength(3),
+    ]),
   });
 
   constructor(
@@ -20,7 +23,10 @@ export class TodoFormComponent {
   ) { }
 
   onSubmit() {
-    console.log(this.todoForm);
-    this.dataService.add({id: 1, text: "sdasd", completed: true});
+    this.todoForm.get('todo')?.markAsTouched();
+    if (this.todoForm.invalid && (this.todoForm.dirty || this.todoForm.touched)) return;
+    this.dataService.add({text: this.todoForm.get("todo")?.value ?? '', completed: false});
   }
+
+  get todo() { return this.todoForm.get('todo'); }
 }

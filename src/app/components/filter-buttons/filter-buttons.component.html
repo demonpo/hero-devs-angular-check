@@ -1,0 +1,16 @@
+<div class="buttons-container">
+  <button
+    class="default-button"
+    [ngClass]="{'active' : _selectedFilter === undefined}"
+    (click)="selectFilter()"
+  >
+    All</button>
+  <button
+    class="default-button"
+    *ngFor="let filter of filters"
+    [ngClass]="{'active' : _selectedFilter === filter}"
+    (click)="selectFilter(filter)"
+  >
+    {{filter}}
+  </button>
+</div>

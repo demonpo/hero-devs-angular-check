@@ -1,0 +1,11 @@
+<hd-category-filter-buttons (selectedCategory)="selectCategoryFilter($event)"></hd-category-filter-buttons>
+<div *ngIf="todos$ | async as todos" >
+  <hd-todo-lists-by-categories
+    [categoryFilter]="selectedCategoryFilter"
+    [todos]="todos"
+    (deleteTodo)="handleDeleteTodo($event)"
+    (editTodo)="handleEditTodo($event)">
+    >
+  </hd-todo-lists-by-categories>
+</div>
+<hd-edit-todo-with-category-screen (todoSaved)="handleTodoSaved($event)"></hd-edit-todo-with-category-screen>

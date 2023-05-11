@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CategoriesDropdownComponent} from "../categories-dropdown/categories-dropdown.component";
 import {TodoFormComponent} from "../todo-form/todo-form.component";
@@ -12,11 +12,12 @@ import {DataService, Todo} from "../../data.service";
   styleUrls: ['./todo-with-category-form.component.scss']
 })
 export class TodoWithCategoryFormComponent {
+  @ViewChild(TodoFormComponent) todoFormComponent!:TodoFormComponent;
   @Input() selectedCategory: string | undefined;
   @Output() todoSaved = new EventEmitter<Partial<Todo>>();
 
   onSubmit(todo: Partial<Todo>) {
-    this.todoSaved.emit({text: todo.text, completed: todo.completed, category: this.selectedCategory});
+    this.todoSaved.emit({id: todo.id, text: todo.text, completed: todo.completed, category: this.selectedCategory});
   }
 
   selectCategory(category: string) {

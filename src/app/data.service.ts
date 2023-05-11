@@ -44,6 +44,8 @@ export class DataService {
     if (!updatedTodo) return of();
     updatedTodo.text = todo.text;
     updatedTodo.completed = todo.completed;
+    updatedTodo.category = todo.category;
+    this.#data.next([...this.#data.value]);
     return of();
   }
 

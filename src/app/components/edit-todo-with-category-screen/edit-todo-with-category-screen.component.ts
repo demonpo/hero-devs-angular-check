@@ -14,11 +14,11 @@ import {TodoWithCategoryFormComponent} from "../todo-with-category-form/todo-wit
 })
 export class EditTodoWithCategoryScreenComponent {
   @ViewChild(ModalHolderComponent) modalHolderComponent!:ModalHolderComponent;
-  @ViewChild(TodoFormComponent) todoFormComponent!:TodoFormComponent;
+  @ViewChild(TodoWithCategoryFormComponent) todoWithCategoryFormComponent!:TodoWithCategoryFormComponent;
   @Output() todoSaved =  new EventEmitter<Todo>();
-  @Input() category?: string;
 
   handleTodoSaved(todo: Partial<Todo>) {
+    console.log(todo);
     if(!todo.id || !todo.text || todo.completed === undefined) throw new Error("Empty todo saved");
     this.todoSaved.emit({
       id: todo.id,
@@ -38,7 +38,9 @@ export class EditTodoWithCategoryScreenComponent {
   }
 
   editTodo(todo: Todo) {
-    this.todoFormComponent.initTodo = {...todo};
+    console.log(todo);
+    this.todoWithCategoryFormComponent.todoFormComponent.initTodo = {...todo};
+    this.todoWithCategoryFormComponent.selectedCategory = todo.category;
     this.showDialog();
   }
 }

@@ -1,13 +1,8 @@
-
-<div *ngIf="mapToTodosByCategories() | async as todosByCategories" >
-  <ng-container *ngFor="let category of Object.keys(todosByCategories)">
-    <hd-todo-list-with-category-header
-      [category]="category"
-      [todos]="todosByCategories[category]"
-      (deleteTodo)="handleDeleteTodo($event)"
-      (editTodo)="handleEditTodo($event)">
-    </hd-todo-list-with-category-header>
-    <div style="height: 20px"></div>
-  </ng-container>
+<div *ngIf="todos$ | async as todos" >
+  <hd-todo-lists-by-categories
+    [todos]="todos"
+    (deleteTodo)="handleDeleteTodo($event)"
+    (editTodo)="handleEditTodo($event)">
+  </hd-todo-lists-by-categories>
 </div>
 <hd-edit-todo-screen (todoSaved)="handleTodoSaved($event)"></hd-edit-todo-screen>

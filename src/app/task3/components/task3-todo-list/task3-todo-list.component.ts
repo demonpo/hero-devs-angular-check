@@ -7,11 +7,14 @@ import {DataService, Todo} from "../../../data.service";
 import {
   TodoListWithCategoryHeaderComponent
 } from "../../../components/todo-list-with-category-header/todo-list-with-category-header.component";
+import {
+  TodoListsByCategoriesComponent
+} from "../../../components/todo-lists-by-categories/todo-lists-by-categories.component";
 
 @Component({
   selector: 'hd-task3-todo-list',
   standalone: true,
-  imports: [CommonModule, EditTodoScreenComponent, TodoListComponent, TodoListWithCategoryHeaderComponent],
+  imports: [CommonModule, EditTodoScreenComponent, TodoListComponent, TodoListWithCategoryHeaderComponent, TodoListsByCategoriesComponent],
   templateUrl: './task3-todo-list.component.html',
   styleUrls: ['./task3-todo-list.component.scss']
 })
@@ -36,16 +39,5 @@ export class Task3TodoListComponent {
 
   handleEditTodo(todo: Todo) {
     this.editTodoScreenComponent.editTodo(todo);
-  }
-
-  mapToTodosByCategories(): Observable<{[key: string]: Todo[]}> {
-    return this.todos$.pipe(
-      map((todos: Todo[]) => todos.reduce((previousValue: {[key: string]: Todo[]}, currentValue: Todo) => {
-        const category = !currentValue.category || currentValue.category === ''  ? 'default': currentValue.category;
-        if(!previousValue[category]) previousValue[category] = [];
-        previousValue[category].push(currentValue);
-        return previousValue;
-      }, {}))
-    )
   }
 }

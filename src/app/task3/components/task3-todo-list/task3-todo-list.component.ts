@@ -16,6 +16,7 @@ import {
   styleUrls: ['./task3-todo-list.component.scss']
 })
 export class Task3TodoListComponent {
+  protected readonly Object = Object;
   @ViewChild(EditTodoScreenComponent) editTodoScreenComponent!:EditTodoScreenComponent;
 
   todos$: Observable<Todo[]>;
@@ -47,6 +48,4 @@ export class Task3TodoListComponent {
       }, {}))
     )
   }
-
-  protected readonly Object = Object;
 }

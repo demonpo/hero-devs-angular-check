@@ -35,6 +35,7 @@ export class Task4TodoListComponent {
   }
 
   handleDeleteTodo(todo: Todo) {
+    if(!confirm(`Are you sure to delete ${todo.category ?? ''} ${todo.text}`)) return;
     this.dataService.remove(todo.id);
   }
 
@@ -43,7 +44,6 @@ export class Task4TodoListComponent {
   }
 
   selectCategoryFilter(category: string) {
-    console.log("selectCategoryFilter", category);
     this.selectedCategoryFilter = category;
   }
 }

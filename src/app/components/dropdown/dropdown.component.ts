@@ -11,6 +11,12 @@ import {FormsModule} from "@angular/forms";
 })
 export class DropdownComponent {
   @Input() options: string[] = [];
+  @Input()
+  set preselectedOption(option: string | undefined) {
+    if(!option) return;
+    console.log(option);
+    this._selectedOption = option;
+  }
   @Output() newOption: EventEmitter<string> = new EventEmitter<string>();
   @Output() selectedOption: EventEmitter<string> = new EventEmitter<string>();
   _selectedOption: string = '';

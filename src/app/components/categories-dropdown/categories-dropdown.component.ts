@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {DropdownComponent} from "../dropdown/dropdown.component";
 import {CategoryService} from "../../category.service";
@@ -15,6 +15,7 @@ import {TodoListComponent} from "../todo-list/todo-list.component";
 export class CategoriesDropdownComponent {
   categories$: Observable<string[]>;
   @Output() selectedCategory: EventEmitter<string> = new EventEmitter<string>();
+  @Input() preselectedCategory: string | undefined;
 
   constructor(
     private categoryService: CategoryService
@@ -23,7 +24,6 @@ export class CategoriesDropdownComponent {
   }
 
   addCategory(category: string) {
-    console.log("addCategory");
     this.categoryService.add(category);
   }
 }

@@ -14,6 +14,7 @@ import {Todo} from "../../data.service";
 })
 export class TodoListsByCategoriesComponent {
   protected readonly Object = Object;
+  @Input() categoryFilter?: string | undefined;
   @Input()
   set todos(todos: Todo[]) {
     this._todosByCategories = this.mapToTodosByCategories(todos);

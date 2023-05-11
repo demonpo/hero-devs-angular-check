@@ -1,5 +1,6 @@
 <ng-container *ngFor="let category of Object.keys(_todosByCategories)">
   <hd-todo-list-with-category-header
+    *ngIf="category === categoryFilter || categoryFilter === undefined"
     [category]="category"
     [todos]="_todosByCategories[category]"
     (deleteTodo)="deleteTodo.emit($event)"

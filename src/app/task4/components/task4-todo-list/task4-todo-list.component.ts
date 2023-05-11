@@ -9,18 +9,20 @@ import {DataService, Todo} from "../../../data.service";
 import {
   TodoListsByCategoriesComponent
 } from "../../../components/todo-lists-by-categories/todo-lists-by-categories.component";
+import {
+  CategoryFilterButtonsComponent
+} from "../../../components/category-filter-buttons/category-filter-buttons.component";
 
 @Component({
   selector: 'hd-task4-todo-list',
   standalone: true,
-  imports: [CommonModule, EditTodoScreenComponent, TodoListWithCategoryHeaderComponent, TodoListsByCategoriesComponent],
+  imports: [CommonModule, EditTodoScreenComponent, TodoListWithCategoryHeaderComponent, TodoListsByCategoriesComponent, CategoryFilterButtonsComponent],
   templateUrl: './task4-todo-list.component.html',
   styleUrls: ['./task4-todo-list.component.scss']
 })
 export class Task4TodoListComponent {
-  protected readonly Object = Object;
   @ViewChild(EditTodoScreenComponent) editTodoScreenComponent!:EditTodoScreenComponent;
-
+  selectedCategoryFilter?: string;
   todos$: Observable<Todo[]>;
   constructor(
     private dataService: DataService,
@@ -38,5 +40,10 @@ export class Task4TodoListComponent {
 
   handleEditTodo(todo: Todo) {
     this.editTodoScreenComponent.editTodo(todo);
+  }
+
+  selectCategoryFilter(category: string) {
+    console.log("selectCategoryFilter", category);
+    this.selectedCategoryFilter = category;
   }
 }

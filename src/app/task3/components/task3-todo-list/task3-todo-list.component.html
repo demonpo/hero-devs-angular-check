@@ -1,2 +1,11 @@
-<hd-todo-list *ngIf="todos$ | async as todos" [todos]="todos" (deleteTodo)="handleDeleteTodo($event)" (editTodo)="handleEditTodo($event)"></hd-todo-list>
+
+<div *ngIf="mapToTodosByCategories() | async as todosByCategories" >
+  <hd-todo-list-with-category-header
+    *ngFor="let category of Object.keys(todosByCategories)"
+    [category]="category"
+    [todos]="todosByCategories[category]"
+    (deleteTodo)="handleDeleteTodo($event)"
+    (editTodo)="handleEditTodo($event)">
+  </hd-todo-list-with-category-header>
+</div>
 <hd-edit-todo-screen (todoSaved)="handleTodoSaved($event)"></hd-edit-todo-screen>

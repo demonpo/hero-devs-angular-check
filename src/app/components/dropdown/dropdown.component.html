@@ -1,6 +1,7 @@
 <div>
-  <select>
+  <select [(ngModel)]="_selectedOption" (change)="selectOption()">
     <option value="" disabled selected>Select an option</option>
+    <option [value]="''">none</option>
     <option *ngFor="let option of options" [value]="option">{{ option }}</option>
   </select>
   <input type="text" [(ngModel)]="_newOption" placeholder="Enter a new option">

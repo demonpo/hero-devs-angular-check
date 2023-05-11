@@ -1,1 +1,1 @@
-<hd-dropdown *ngIf="categories$ | async as categories" [options]="categories" (newOption)="addCategory($event)"></hd-dropdown>
+<hd-dropdown *ngIf="categories$ | async as categories" [options]="categories" (newOption)="addCategory($event)" (selectedOption)="selectedCategory.emit($event)"></hd-dropdown>

@@ -13,11 +13,19 @@ import {CategoriesDropdownComponent} from "../../../components/categories-dropdo
   styleUrls: ['./task3-todo-form.component.scss']
 })
 export class Task3TodoFormComponent {
+
+  selectedCategory?: string;
   constructor(
     private dataService: DataService
   ) { }
 
   onSubmit(todo: Partial<Todo>) {
-    this.dataService.add({text: todo.text, completed: todo.completed});
+    console.log("category: this.selectedCategory", this.selectedCategory);
+    this.dataService.add({text: todo.text, completed: todo.completed, category: this.selectedCategory});
+  }
+
+  selectCategory(category: string) {
+    console.log("Select category",category);
+    this.selectedCategory = category;
   }
 }

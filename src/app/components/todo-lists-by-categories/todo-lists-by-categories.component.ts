@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {
   TodoListWithCategoryHeaderComponent
 } from "../todo-list-with-category-header/todo-list-with-category-header.component";

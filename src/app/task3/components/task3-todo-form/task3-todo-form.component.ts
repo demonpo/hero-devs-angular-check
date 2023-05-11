@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {TodoFormComponent} from "../../../components/todo-form/todo-form.component";
 import {DataService, Todo} from "../../../data.service";
 import {DropdownComponent} from "../../../components/dropdown/dropdown.component";

@@ -1,5 +1,5 @@
 import {Component, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {TodoFormComponent} from "../todo-form/todo-form.component";
 
 @Component({

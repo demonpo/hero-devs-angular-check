@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {Task4TodoFormComponent} from "./components/task4-todo-form/task4-todo-form.component";
 import {Task4TodoListComponent} from "./components/task4-todo-list/task4-todo-list.component";
 import {CategoryFilterButtonsComponent} from "../components/category-filter-buttons/category-filter-buttons.component";

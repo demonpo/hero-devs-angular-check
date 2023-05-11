@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TodoListsByCategoriesComponent } from './todo-lists-by-categories.component';
+import {TodoListsByCategoriesComponent} from './todo-lists-by-categories.component';
 
 describe('TodoListsByCategoriesComponent', () => {
   let component: TodoListsByCategoriesComponent;

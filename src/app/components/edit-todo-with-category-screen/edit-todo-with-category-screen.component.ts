@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {ModalHolderComponent} from "../modal-holder/modal-holder.component";
 import {TodoFormComponent} from "../todo-form/todo-form.component";
 import {Todo} from "../../data.service";

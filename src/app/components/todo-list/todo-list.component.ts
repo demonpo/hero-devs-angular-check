@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {DataService, Todo} from "../../data.service";
+import {CommonModule} from '@angular/common';
+import {Todo} from "../../data.service";
 import {TodoItemComponent} from "../todo-item/todo-item.component";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'hd-todo-list',

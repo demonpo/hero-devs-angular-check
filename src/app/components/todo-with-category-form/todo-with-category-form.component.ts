@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {CategoriesDropdownComponent} from "../categories-dropdown/categories-dropdown.component";
 import {TodoFormComponent} from "../todo-form/todo-form.component";
-import {DataService, Todo} from "../../data.service";
+import {Todo} from "../../data.service";
 
 @Component({
   selector: 'hd-todo-with-category-form',

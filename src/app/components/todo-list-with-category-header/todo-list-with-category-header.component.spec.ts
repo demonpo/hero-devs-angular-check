@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TodoListWithCategoryHeaderComponent } from './todo-list-with-category-header.component';
+import {TodoListWithCategoryHeaderComponent} from './todo-list-with-category-header.component';
 
 describe('TodoListWithCategoryHeaderComponent', () => {
   let component: TodoListWithCategoryHeaderComponent;

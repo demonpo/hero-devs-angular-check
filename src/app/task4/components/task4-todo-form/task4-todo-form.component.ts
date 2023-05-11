@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {
-    TodoWithCategoryFormComponent
+  TodoWithCategoryFormComponent
 } from "../../../components/todo-with-category-form/todo-with-category-form.component";
 import {DataService, Todo} from "../../../data.service";
 

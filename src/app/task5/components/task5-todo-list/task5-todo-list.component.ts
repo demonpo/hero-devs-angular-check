@@ -1,11 +1,11 @@
 import {Component, ViewChild} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {
-    CategoryFilterButtonsComponent
+  CategoryFilterButtonsComponent
 } from "../../../components/category-filter-buttons/category-filter-buttons.component";
 import {EditTodoScreenComponent} from "../../../components/edit-todo-screen/edit-todo-screen.component";
 import {
-    TodoListsByCategoriesComponent
+  TodoListsByCategoriesComponent
 } from "../../../components/todo-lists-by-categories/todo-lists-by-categories.component";
 import {Observable} from "rxjs";
 import {DataService, Todo} from "../../../data.service";

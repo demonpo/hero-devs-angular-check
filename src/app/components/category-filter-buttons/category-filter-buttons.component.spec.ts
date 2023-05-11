@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CategoryFilterButtonsComponent } from './category-filter-buttons.component';
+import {CategoryFilterButtonsComponent} from './category-filter-buttons.component';
 
 describe('CategoryFilterButtonsComponent', () => {
   let component: CategoryFilterButtonsComponent;

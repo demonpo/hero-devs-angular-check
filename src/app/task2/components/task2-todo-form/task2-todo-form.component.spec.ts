@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { Task2TodoFormComponent } from './task2-todo-form.component';
+import {Task2TodoFormComponent} from './task2-todo-form.component';
 
 describe('Task2TodoFormComponent', () => {
   let component: Task2TodoFormComponent;

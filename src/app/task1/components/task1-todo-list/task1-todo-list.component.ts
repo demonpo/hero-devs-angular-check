@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {Observable} from "rxjs";
 import {DataService, Todo} from "../../../data.service";
 import {TodoListComponent} from "../../../components/todo-list/todo-list.component";

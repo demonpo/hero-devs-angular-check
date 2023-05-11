@@ -1,10 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {EditTodoScreenComponent} from "../../../components/edit-todo-screen/edit-todo-screen.component";
 import {
-    TodoListWithCategoryHeaderComponent
+  TodoListWithCategoryHeaderComponent
 } from "../../../components/todo-list-with-category-header/todo-list-with-category-header.component";
-import {map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {DataService, Todo} from "../../../data.service";
 import {
   TodoListsByCategoriesComponent

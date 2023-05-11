@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TodoWithCategoryFormComponent } from './todo-with-category-form.component';
+import {TodoWithCategoryFormComponent} from './todo-with-category-form.component';
 
 describe('TodoWithCategoryFormComponent', () => {
   let component: TodoWithCategoryFormComponent;

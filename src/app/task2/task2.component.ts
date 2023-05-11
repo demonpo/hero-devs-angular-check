@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {TodoFormComponent} from "../components/todo-form/todo-form.component";
 import {TodoListComponent} from "../components/todo-list/todo-list.component";
 import {Task2TodoFormComponent} from "./components/task2-todo-form/task2-todo-form.component";

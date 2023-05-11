@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModalHolderComponent } from './modal-holder.component';
+import {ModalHolderComponent} from './modal-holder.component';
 
 describe('ModalHolderComponent', () => {
   let component: ModalHolderComponent;

@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Output, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {TodoFormComponent} from "../todo-form/todo-form.component";
-import {DataService, Todo} from "../../data.service";
+import {Todo} from "../../data.service";
 import {ModalHolderComponent} from "../modal-holder/modal-holder.component";
 
 @Component({

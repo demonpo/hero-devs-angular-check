@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {FilterButtonsComponent} from "../filter-buttons/filter-buttons.component";
 import {Observable} from "rxjs";
 import {CategoryService} from "../../category.service";

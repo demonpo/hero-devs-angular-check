@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {DropdownComponent} from "../dropdown/dropdown.component";
 import {CategoryService} from "../../category.service";
 import {Observable} from "rxjs";

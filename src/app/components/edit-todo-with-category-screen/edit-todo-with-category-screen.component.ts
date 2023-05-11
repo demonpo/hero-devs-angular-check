@@ -18,7 +18,6 @@ export class EditTodoWithCategoryScreenComponent {
   @Output() todoSaved =  new EventEmitter<Todo>();
 
   handleTodoSaved(todo: Partial<Todo>) {
-    console.log(todo);
     if(!todo.id || !todo.text || todo.completed === undefined) throw new Error("Empty todo saved");
     this.todoSaved.emit({
       id: todo.id,
@@ -38,7 +37,6 @@ export class EditTodoWithCategoryScreenComponent {
   }
 
   editTodo(todo: Todo) {
-    console.log(todo);
     this.todoWithCategoryFormComponent.todoFormComponent.initTodo = {...todo};
     this.todoWithCategoryFormComponent.selectedCategory = todo.category;
     this.showDialog();

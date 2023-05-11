@@ -14,7 +14,6 @@ export class DropdownComponent {
   @Input()
   set preselectedOption(option: string | undefined) {
     if(!option) return;
-    console.log(option);
     this._selectedOption = option;
   }
   @Output() newOption: EventEmitter<string> = new EventEmitter<string>();

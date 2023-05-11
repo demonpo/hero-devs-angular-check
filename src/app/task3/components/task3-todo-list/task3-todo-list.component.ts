@@ -4,6 +4,7 @@ import {EditTodoScreenComponent} from "../../../components/edit-todo-screen/edit
 import {TodoListComponent} from "../../../components/todo-list/todo-list.component";
 import {Observable} from "rxjs";
 import {DataService, Todo} from "../../../data.service";
+import {CategoryService} from "../../../category.service";
 
 @Component({
   selector: 'hd-task3-todo-list',
@@ -17,7 +18,8 @@ export class Task3TodoListComponent {
 
   todos$: Observable<Todo[]>;
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
+    private categoryService: CategoryService,
   ) {
     this.todos$ = dataService.getData();
   }

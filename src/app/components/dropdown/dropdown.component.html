@@ -3,6 +3,6 @@
     <option value="" disabled selected>Select an option</option>
     <option *ngFor="let option of options" [value]="option">{{ option }}</option>
   </select>
-  <input type="text" [(ngModel)]="newOption" placeholder="Enter a new option">
+  <input type="text" [(ngModel)]="_newOption" placeholder="Enter a new option">
   <button (click)="addOption()">Add</button>
 </div>

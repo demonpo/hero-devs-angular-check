@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from "@angular/forms";
 
@@ -10,14 +10,14 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent {
-  options: string[] = [];
-  newOption: string = '';
+  @Input() options: string[] = [];
+  @Output() newOption: EventEmitter<string> = new EventEmitter<string>();
+  _newOption: string = '';
 
   addOption() {
-    if (this.newOption.trim() !== '') {
-      this.options.push(this.newOption);
-      this.newOption = '';
+    if (this._newOption.trim() !== '') {
+      this.newOption.emit(this._newOption);
+      this._newOption = '';
     }
   }
-
 }

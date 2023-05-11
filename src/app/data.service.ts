@@ -5,6 +5,7 @@ export type Todo = {
   id: number;
   text: string;
   completed: boolean;
+  category?: string;
 };
 
 @Injectable({

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {TodoListComponent} from "../../../components/todo-list/todo-list.component";
 import {Observable} from "rxjs";
 import {DataService, Todo} from "../../../data.service";
-import {EditTodoScreenComponent} from "../edit-todo-screen/edit-todo-screen.component";
+import {EditTodoScreenComponent} from "../../../components/edit-todo-screen/edit-todo-screen.component";
 
 @Component({
   selector: 'hd-task2-todo-list',

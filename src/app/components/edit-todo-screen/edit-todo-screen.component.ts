@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Output, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TodoFormComponent} from "../../../components/todo-form/todo-form.component";
-import {DataService, Todo} from "../../../data.service";
-import {ModalHolderComponent} from "../../../components/modal-holder/modal-holder.component";
+import {TodoFormComponent} from "../todo-form/todo-form.component";
+import {DataService, Todo} from "../../data.service";
+import {ModalHolderComponent} from "../modal-holder/modal-holder.component";
 
 @Component({
   selector: 'hd-edit-todo-screen',

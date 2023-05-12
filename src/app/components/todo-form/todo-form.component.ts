@@ -22,7 +22,7 @@ export class TodoFormComponent {
   todoForm = new FormGroup({
     todo: new FormControl(this._initTodo?.text?? '',[
       Validators.required,
-      Validators.minLength(3),
+      Validators.minLength(2),
     ]),
   });
 

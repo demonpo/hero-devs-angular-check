@@ -6,7 +6,7 @@ import {BehaviorSubject, Observable, of} from "rxjs";
 })
 export class CategoryService {
 
-  #initialData: string[] = ['tempral', 'comida'];
+  #initialData: string[] = [];
   #data = new BehaviorSubject<string[]>([]);
   #nextId = 1;
 

@@ -1,4 +1,5 @@
 <hd-category-filter-buttons (selectedCategory)="selectCategoryFilter($event)"></hd-category-filter-buttons>
+<div style="height: 8px"></div>
 <div *ngIf="todos$ | async as todos" >
   <hd-todo-lists-by-categories
     [categoryFilter]="selectedCategoryFilter"

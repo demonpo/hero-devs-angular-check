@@ -1,9 +1,10 @@
 <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
-  <div>
-    <div>
+    <div class="container">
       <label for="task">Task: </label>
-      <input id="task" type="text" formControlName="todo">
-      <button type="submit" class="default-button submit-button">Save task</button>
+      <div>
+        <input id="task" type="text" formControlName="todo">
+        <button type="submit" class="default-button submit-button">Save task</button>
+      </div>
     </div>
     <div *ngIf="todo?.invalid && (todo?.dirty || todo?.touched)" class="errors-container">
       <div *ngIf="todo?.errors?.['required']">
@@ -13,5 +14,4 @@
         Name must be at least 2 characters long.
       </div>
     </div>
-  </div>
 </form>

@@ -14,12 +14,5 @@ export class TodoListComponent {
   @Input() todos: Todo[] = [];
   @Output() deleteTodo= new EventEmitter<Todo>();
   @Output() editTodo= new EventEmitter<Todo>();
-
-  handleDeleteTodo(todo: Todo) {
-    this.deleteTodo.emit(todo)
-  }
-
-  handleEditTodo(todo: Todo) {
-    this.editTodo.emit(todo);
-  }
+  @Output() checked = new EventEmitter<Todo>();
 }

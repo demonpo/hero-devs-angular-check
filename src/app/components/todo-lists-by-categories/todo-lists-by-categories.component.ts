@@ -21,6 +21,7 @@ export class TodoListsByCategoriesComponent {
   }
   @Output() deleteTodo= new EventEmitter<Todo>();
   @Output() editTodo= new EventEmitter<Todo>();
+  @Output() checked = new EventEmitter<Todo>();
 
   _todos: Todo[] = [];
   _todosByCategories:{[key: string]: Todo[]} = {};

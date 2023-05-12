@@ -17,6 +17,7 @@ export class TodoItemComponent {
   };
   @Output() deleteTodo= new EventEmitter<Todo>();
   @Output() editTodo= new EventEmitter<Todo>();
+  @Output() checked = new EventEmitter<Todo>();
 
   handleTextDoubleClicked(todo: Todo) {
     this.editTodo.emit(todo);
@@ -24,5 +25,9 @@ export class TodoItemComponent {
 
   handleRemoveButtonClicked(todo: Todo) {
     this.deleteTodo.emit(todo);
+  }
+
+  handleCheckBox(checked: boolean) {
+    this.todo.completed = checked;
   }
 }

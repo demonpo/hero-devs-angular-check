@@ -4,7 +4,9 @@
     [category]="category"
     [todos]="_todosByCategories[category]"
     (deleteTodo)="deleteTodo.emit($event)"
-    (editTodo)="editTodo.emit($event)">
+    (editTodo)="editTodo.emit($event)"
+    (checked)="checked.emit($event)"
+  >
   </hd-todo-list-with-category-header>
   <div style="height: 20px"></div>
 </ng-container>

@@ -1,2 +1,7 @@
 <div class="header">{{category}}</div>
-<hd-todo-list [todos]="todos" (deleteTodo)="deleteTodo.emit($event)" (editTodo)="editTodo.emit($event)"></hd-todo-list>
+<hd-todo-list
+  [todos]="todos"
+  (deleteTodo)="deleteTodo.emit($event)"
+  (editTodo)="editTodo.emit($event)"
+  (checked)="checked.emit($event)"
+></hd-todo-list>

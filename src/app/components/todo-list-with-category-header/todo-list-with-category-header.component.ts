@@ -15,4 +15,5 @@ export class TodoListWithCategoryHeaderComponent {
   @Input() todos: Todo[] = [];
   @Output() deleteTodo= new EventEmitter<Todo>();
   @Output() editTodo= new EventEmitter<Todo>();
+  @Output() checked = new EventEmitter<Todo>();
 }

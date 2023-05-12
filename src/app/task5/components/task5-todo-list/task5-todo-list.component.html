@@ -5,8 +5,9 @@
     [categoryFilter]="selectedCategoryFilter"
     [todos]="todos"
     (deleteTodo)="handleDeleteTodo($event)"
-    (editTodo)="handleEditTodo($event)">
-    >
+    (editTodo)="handleEditTodo($event)"
+    (checked)="handleTodoSaved($event)"
+  >
   </hd-todo-lists-by-categories>
 </div>
 <hd-edit-todo-with-category-screen (todoSaved)="handleTodoSaved($event)"></hd-edit-todo-with-category-screen>

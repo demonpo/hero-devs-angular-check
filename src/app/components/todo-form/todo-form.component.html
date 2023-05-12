@@ -1,7 +1,7 @@
 <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
     <div class="container">
       <label for="task">Task: </label>
-      <div>
+      <div class="input-section">
         <input id="task" type="text" formControlName="todo">
         <button type="submit" class="default-button submit-button">Save task</button>
       </div>

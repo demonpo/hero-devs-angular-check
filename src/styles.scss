@@ -16,11 +16,14 @@ select {
 
 input {
   font-family: 'Roboto', serif;
-  box-sizing: border-box;
   height: 25px;
   background: #161616;
   color: white;
   border: none;
+}
+
+input[type=text] {
+  padding: 0 5px;
 }
 
 .default-button {

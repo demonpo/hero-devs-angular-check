@@ -4,7 +4,7 @@
     <option [value]="''">none</option>
     <option *ngFor="let option of options" [value]="option">{{ option }}</option>
   </select>
-  <div>
+  <div class="input-section">
     <input type="text" [(ngModel)]="_newOption" placeholder="Enter a new option">
     <button (click)="addOption()" class="default-button">Add</button>
   </div>
